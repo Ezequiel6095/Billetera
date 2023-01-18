@@ -75,7 +75,7 @@ const crearIngresoHTML = (ingreso) => {
 const eliminarIngreso = (id) => {
     let indiceEliminar= ingresos.findIndex( ingreso => ingreso.id === id); /*Sirve para recorrer el arreglo de la misma forma que se venia haciendo con el for, la funcion findIndex
     dentro de esta se declara una funcion flecha donde comparamos del arrelgo ingreso.id el id obtenido del elemento de ingreso en este caso  */
-    ingresos.splice(indiceEliminar,1) // Eliminamos el indice indicado
+    ingresos.splice(indiceEliminar,1); // Eliminamos el indice indicado
     cargarCabecero();
     cargarIngresos();
 }
@@ -107,8 +107,30 @@ const crearEgresosHTML = (egreso) =>{
 }
 
 const eliminarEgreso = (id) => {
-    let indiceEliminar= egresos.findIndex( egreso => egreso.id === id); 
-    egresos.splice(indiceEliminar,1) // Eliminamos el indice indicado
+    let indiceEliminar = egresos.findIndex( egreso => egreso.id ===id); 
+    console.log(indiceEliminar)
+    egresos.splice(indiceEliminar, 1); 
     cargarCabecero();
     cargarEgresos();
+
 }
+
+let agregarDato = () => {
+    let forma = document.forms['forma'];
+    let tipo = forma['tipo'];
+    let descripcion = forma['descripcion'];
+    let valor = forma['valor'];
+    if (descripcion.value !== '' && valor.value !== ''){
+        if(tipo.value === 'ingreso'){
+            ingresos.push(new Ingreso(descripcion.value, +valor.value));
+            cargarCabecero();
+            cargarIngresos();
+        }
+        else if(tipo.value === 'egreso'){
+            egresos.push(new Egreso(descripcion.value, +valor.value));
+            cargarCabecero();
+            cargarEgresos();
+        }
+    }
+}
+

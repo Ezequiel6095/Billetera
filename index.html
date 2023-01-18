@@ -7,6 +7,7 @@
     <title>Billetera</title>
     <link href="Css/estilos.css" rel="stylesheet"/>
 </head>
+
 <body onload="cargarApp()">
     <div class="cabecero">
         <div class="presupuesto">
@@ -28,9 +29,26 @@
                 <div class="presupuesto_egreso--porcentaje" id="porcentaje">5%</div>
             </div>
         </div>
-
         </div>
     </div>
+
+    <form id="forma" onsubmit="return false;">
+        <div class="agregar">
+            <div class="agregar_contenedor">
+                <select class="agregar_tipo" id="tipo">
+                    <option value="ingreso" selected>+$</option>
+                    <option value="egreso">-$</option>
+                </select>
+                <input tyoe='text' class="agregar_descripcion"
+                placeholder="Agregar Descripción" id="descripcion"/>
+                <input type="number" class="agregar_valor"
+                placeholder="Valor" id="valor" step="any"/>
+                <button class="agregar_btn" onclick="agregarDato()">
+                    <ion-icon name="checkmark-circle-outline"></ion-icon>
+                </button>
+            </div>
+        </div>
+    </form>
 
     <div class="contenedor limpiarEstilos">
         <div class="ingreso">

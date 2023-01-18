@@ -3,7 +3,7 @@ class Egreso extends Dato{
 
     constructor(descripcion,valor){
         super(descripcion,valor);
-        this._id = ++Egreso.contadorIngreso;
+        this._id = ++Egreso.contadorEgreso;
     }
     get id(){
         return this._id;
