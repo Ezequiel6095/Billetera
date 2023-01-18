@@ -1,6 +1,5 @@
-# Repositorio-de-prueba
-Prueba de repositorio
+# Repositorio de Billetera
+Repositorio de aplicación de Billetera, curso JavaScript. 
 
-# Prueba de Repositorio
-Repositorio de prueba
 [linkedin](https://www.linkedin.com/in/ezequiel-DQ/)
+[Discord](Ezequiel_2d1az#2601)
